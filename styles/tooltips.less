@@ -1,0 +1,17 @@
+.tooltip {
+    border-radius: @component-border-radius !important;
+    box-shadow: 1em 1em .5em .5em rgba(0,0,0,.3);
+    .tooltip-inner {
+        line-height: 1em;
+        padding: .75em;
+        white-space: nowrap;
+        max-width: none;
+    }
+    .keystroke {
+        padding: .15em .4em;
+        margin: 0 -.3em 0 .25em;
+        border-radius: max(2px, @component-border-radius / 2);
+        color: @text-color-selected;
+        background: @background-color-selected;
+    }
+}

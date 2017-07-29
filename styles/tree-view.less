@@ -1,0 +1,79 @@
+
+// Tree View
+// -------------------
+
+// Used to explore and open files in the current project.
+// Overrides: atom/tree-view
+
+
+.tree-view-resizer {
+    border-right: 1px solid @base-border-color;
+}
+
+.tree-view {
+
+    //background-color: @tree-view-background-color;
+    font-size: .9em;
+
+    .list-item {
+        line-height: 1.5em !important;
+
+        &.project-root-header .name:not(.status-ignored) {
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        &:not(.status-modified) {
+            color: darken(@text-color, 10%);
+            &.status-ignored {
+                opacity: .3;
+            }
+        }
+        &.status-modified {
+            color: @text-color-warning;
+        }
+    }
+    .list-item.selected {
+        color: @text-color-selected;
+    }
+    .list-nested-item.selected::before,
+    .list-item.selected::before {
+        height: 1.5em !important;
+    }
+    .list-item .icon::before {
+        height: auto;
+        font-size: .9em;
+        margin-right: 0;
+    }
+    .directory .header.list-item::before {
+        margin-right: 0;
+    }
+    .has-collapsable-children .list-nested-item > .list-tree > li {
+        padding-left: 1em;
+        margin-left: 0;
+    }
+
+    // open files package
+    .open-files {
+
+        .list-item.open-files-title {
+            font-weight: bold !important;
+            font-size: 1.3em !important;
+            height: 1.5em !important;
+            line-height: 1.5em !important;
+            padding: 0 !important;
+            margin: .5em 0 0 0 !important;
+            span strong {
+                display: inline-block;
+                text-transform: lowercase !important;
+            }
+            span strong:first-letter {
+                text-transform: uppercase !important;
+            }
+        }
+    }
+    #foldersLabel {
+        visibility: hidden;
+        height: .3em !important;
+        margin: 0 !important;
+    }
+}

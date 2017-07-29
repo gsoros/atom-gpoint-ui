@@ -1,0 +1,66 @@
+
+// Lists
+// -------------------
+
+// Used in different places, like the Tree View, Commmand Palette etc.
+// Overrides: atom/static/lists.less
+
+// List Group -------------------
+.list-group, .select-list {
+    li {
+        padding: @component-padding/2, @component-padding/4;
+        border-radius: @component-border-radius;
+        line-height: 1.5em !important;
+        margin: 1px;
+        &.active {
+            color: @text-color-success;
+            background-color: @background-color-success;
+            &:hover {
+                background-color: lighten(@background-color-success, 10%);
+            }
+        }
+        &.selected {
+            color: @text-color-selected;
+            box-shadow: inset 100em 100em 1em 1em rgba(255, 255, 255, 0.2);
+            &:before{ display: none; }
+        }
+    }
+}
+
+
+// List Tree -------------------
+.list-tree {
+    .selected {
+        color: @text-color-selected;
+    }
+}
+
+
+// Select List -------------------
+.select-list {
+    li {
+        padding: @component-padding/2 @component-padding;
+    }
+    .status {
+        float: right;
+    }
+}
+
+
+// Popover List -------------------
+// Used as a popover for something like autocomplete.
+.select-list.popover-list {
+    @popover-list-padding: @component-padding/2;
+
+    padding: @popover-list-padding;
+    border-radius: @component-border-radius;
+    background-color: @overlay-background-color;
+    box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
+
+    .list-group {
+        margin-top: @popover-list-padding;
+        li {
+            padding-left: @popover-list-padding;
+        }
+    }
+}

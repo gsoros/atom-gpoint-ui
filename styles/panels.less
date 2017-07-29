@@ -1,0 +1,49 @@
+
+// Panels
+// -------------------
+
+// Overrides: atom/static/panels.less
+
+.panel-heading {
+    border-bottom: 1px solid @panel-heading-border-color;
+    background-color: @panel-heading-background-color;
+}
+
+.inset-panel {
+    background-color: @inset-panel-background-color;
+    .panel-heading {
+        background-color: lighten(@inset-panel-background-color, 4%);
+    }
+}
+
+
+atom-panel.modal.overlay {
+    border: 1px solid @overlay-border-color;
+    border-radius: @component-border-radius;
+    overflow: hidden;
+    background-color: lighten(@base-background-color, 1%);
+    box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
+    &.from-top {
+        top: 10%;
+    }
+}
+
+.settings-view .config-menu {
+    background: inherit;
+}
+.settings-view .section:first-child, .settings-view .section:last-child {
+    padding: 1em;
+}
+.settings-view .themes-panel .control-group {
+    margin-top: 1em;
+}
+.settings-view .package-card {
+    background-color: lighten(@base-background-color, 3%);
+    border-radius: @component-border-radius * 2;
+    box-shadow: inset .3em .1em 1em .05em rgba(255, 255, 255, 0.04);
+}
+
+.settings-view .table td {
+    padding: 0;
+    height: 1em;
+}

@@ -1,35 +1,43 @@
 
-// Tree View
-// -------------------
-
-// Used to explore and open files in the current project.
-// Overrides: atom/tree-view
-
-
 .tree-view-resizer {
     border-right: 1px solid @base-border-color;
 }
 
 .tree-view {
-
-    //background-color: @tree-view-background-color;
     font-size: .9em;
 
+    .directory.entry.list-nested-item.expanded {
+
+    }
+    // directories having modified, deleted or new files
+    .directory.entry.list-nested-item.expanded {
+        .status-modified:not(.file),
+        .status-deleted:not(.file),
+        .status-added:not(.file) {
+            color: darken(@text-color, 10%);
+            > .header.list-item .name {
+               color: fade(@text-color-info, 80%);
+           }
+        }
+    }
+    .file.entry.status-modified {
+        color: @text-color-warning;
+    }
+    .file.entry.status-deleted { // never seen a deleted file, but who knows
+        color: @text-color-error;
+    }
+    .file.entry.status-added {
+        color: @text-color-success;
+    }
+    .status-ignored {
+        opacity: .8;
+    }
     .list-item {
         line-height: 1.5em !important;
 
         &.project-root-header .name:not(.status-ignored) {
             font-weight: bold;
             font-size: 1.3em;
-        }
-        &:not(.status-modified) {
-            color: darken(@text-color, 10%);
-            &.status-ignored {
-                opacity: .3;
-            }
-        }
-        &.status-modified {
-            color: @text-color-warning;
         }
     }
     .list-item.selected {
@@ -54,6 +62,16 @@
 
     // open files package
     .open-files {
+        .open-files-item {
+            &.modified {
+                color: @text-color-warning;
+            }
+            button.close-open-file {
+                margin-left: -2em;
+                padding-right: 0;
+            }
+        }
+
 
         .list-item.open-files-title {
             font-weight: bold !important;

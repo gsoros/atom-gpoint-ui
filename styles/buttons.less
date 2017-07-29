@@ -10,17 +10,15 @@ atom-text-editor[mini], {
     box-shadow: inset .3em .1em 1em .2em rgba(255, 255, 255, 0.04);
     &:hover,
     &:focus {
-        border-top-width: 1px;
-        border-bottom-width: 1px;
-        border-top-color: @background-color-highlight !important;
-        border-bottom-color: @background-color-highlight !important;
+        box-shadow: inset .3em .1em 1em .2em rgba(255, 255, 255, 0.1);
         color: @text-color-highlight;
     }
     &:active {
         color: fade(@text-color-selected, 66%);
         background-color: @background-color-info;
     }
-    &.selected {
+    &.selected,
+    &:checked {
         color: @text-color-selected;
         background-color: @background-color-success !important;
         &:hover {

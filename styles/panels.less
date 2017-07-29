@@ -28,22 +28,24 @@ atom-panel.modal.overlay {
     }
 }
 
-.settings-view .config-menu {
-    background: inherit;
-}
-.settings-view .section:first-child, .settings-view .section:last-child {
-    padding: 1em;
-}
-.settings-view .themes-panel .control-group {
-    margin-top: 1em;
-}
-.settings-view .package-card {
-    background-color: lighten(@base-background-color, 3%);
-    border-radius: @component-border-radius * 2;
-    box-shadow: inset .3em .1em 1em .05em rgba(255, 255, 255, 0.04);
-}
+.settings-view {
+    .config-menu {
+        background: inherit;
+    }
+    .section:first-child, .settings-view .section:last-child {
+        padding: 1em;
+    }
+    .themes-panel .control-group {
+        margin-top: 1em;
+    }
+    .package-card {
+        background-color: lighten(@base-background-color, 3%);
+        border-radius: @component-border-radius * 2;
+        box-shadow: inset .3em .1em 1em .05em rgba(255, 255, 255, 0.04);
+    }
 
-.settings-view .table td {
-    padding: 0;
-    height: 1em;
+    .table td {
+        padding: 0;
+        height: 1em;
+    }
 }

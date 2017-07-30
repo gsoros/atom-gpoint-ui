@@ -1,18 +1,19 @@
 atom-pane {
-    border-bottom: 1px solid @base-border-color;
-}
-.panel-heading {
-    border-bottom: 1px solid @panel-heading-border-color;
-    background-color: @panel-heading-background-color;
-}
-
-.inset-panel {
-    background-color: @inset-panel-background-color;
-    .panel-heading {
-        background-color: lighten(@inset-panel-background-color, 4%);
+        border-left: 1px solid @base-border-color;
+        border-bottom: 1px solid @base-border-color;
     }
-}
+    .panel-heading {
+        border-bottom: 1px solid @panel-heading-border-color;
+        background-color: @panel-heading-background-color;
+    }
 
+    .inset-panel {
+        background-color: @inset-panel-background-color;
+        .panel-heading {
+            background-color: lighten(@inset-panel-background-color, 4%);
+    }
+
+}
 
 atom-panel.modal.overlay {
     border: 1px solid @overlay-border-color;
@@ -37,14 +38,24 @@ atom-panel.modal.overlay {
     .themes-panel .control-group {
         margin-top: 1em;
     }
-    .package-card {
-        background-color: lighten(@base-background-color, 3%);
+    .package-card,
+    .config-menu .nav > li > a {
         border-radius: @component-border-radius * 2;
+    }
+    .package-card,
+    .config-menu .nav > li > a:hover {
         box-shadow: inset .3em .1em 1em .05em rgba(255, 255, 255, @plastic-effect-strength);
     }
-
+    .package-card {
+        background-color: lighten(@base-background-color, 3%);
+    }
     .table td {
         padding: 0;
         height: 1em;
     }
+}
+
+.atom-dock-toggle-button .right,
+.atom-dock-toggle-button .left, {
+    background-color: @background-color-info;
 }

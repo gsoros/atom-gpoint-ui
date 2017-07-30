@@ -4,22 +4,26 @@
 }
 
 .tree-view {
+
     font-size: .9em;
 
-    .directory.entry.list-nested-item.expanded {
-
+    .list-item:hover {
+        color: @text-color-highlight;
+        background-color: @background-color-highlight;
     }
-    // directories having modified, deleted or new files
     .directory.entry.list-nested-item.expanded {
-        .status-modified:not(.file),
-        .status-deleted:not(.file),
-        .status-added:not(.file) {
-            color: darken(@text-color, 10%);
-            > .header.list-item .name {
-               color: fade(@text-color-info, 80%);
+        .status-modified,
+        .status-deleted,
+        .status-added {
+            &:not(.file) {
+                color: darken(@text-color, 10%);
+                > .header.list-item .name {
+                   color: fade(@text-color-info, 80%);
+                }
            }
         }
     }
+
     .file.entry.status-modified {
         color: @text-color-warning;
     }
@@ -37,7 +41,7 @@
 
         &.project-root-header .name:not(.status-ignored) {
             font-weight: bold;
-            font-size: 1.3em;
+            //font-size: 1.3em;
         }
     }
     .list-item.selected {
@@ -60,6 +64,36 @@
         margin-left: 0;
     }
 
+    // opened files package
+    .file-list.opened-files {
+        .header .name[data-name="Opened files"],      // List view
+        > ol.list-tree > .directory > .header .name {   // Tree view
+            font-weight: bold;
+        }
+        > ol.list-tree .file > span.icon-x  {
+            //color: red;
+            left: -1em;
+        }
+    }
+
+    // tree-view-panes package
+    .tree-view-panes {
+        .header {
+            font-weight: bold;
+            color: @text-color-highlight;
+            .name::before {
+                top: 0;
+            }
+        }
+        .header::before {
+            top: -5 !important;
+            margin: 0 !important;
+        }
+        .list-item .close-button {
+            padding: 0 10px;
+        }
+    }
+
     // open files package
     .open-files {
         .open-files-item {
@@ -71,8 +105,6 @@
                 padding-right: 0;
             }
         }
-
-
         .list-item.open-files-title {
             font-weight: bold !important;
             font-size: 1.3em !important;

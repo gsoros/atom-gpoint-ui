@@ -7,10 +7,10 @@ atom-text-editor[mini], {
     background-color: @button-background-color;
     border-radius: @component-border-radius;
     border: 1px solid @button-border-color !important;
-    box-shadow: inset .3em .1em 1em .2em rgba(255, 255, 255, 0.04);
+    box-shadow: inset .3em .1em 1em .2em rgba(255, 255, 255, @plastic-effect-strength);
     &:hover,
     &:focus {
-        box-shadow: inset .3em .1em 1em .2em rgba(255, 255, 255, 0.1);
+        box-shadow: inset .3em .1em 1em .2em rgba(255, 255, 255, @plastic-effect-strength*2);
         color: @text-color-highlight;
     }
     &:active {

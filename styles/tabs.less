@@ -10,7 +10,8 @@
         background-color: darken(@base-background-color, 2%);
         border: 1px solid @base-border-color;;
         border-bottom-color: lighten(@base-background-color, 10%);
-        border-radius: 15px 15px 0 0;
+        @r: 2*@component-border-radius;
+        border-radius: @r @r 0 0;
 
         &.active{
             border-color: lighten(@base-background-color, 10%);

@@ -1,9 +1,6 @@
-
-// Panels
-// -------------------
-
-// Overrides: atom/static/panels.less
-
+atom-pane {
+    border-bottom: 1px solid @base-border-color;
+}
 .panel-heading {
     border-bottom: 1px solid @panel-heading-border-color;
     background-color: @panel-heading-background-color;
@@ -20,11 +17,13 @@
 atom-panel.modal.overlay {
     border: 1px solid @overlay-border-color;
     border-radius: @component-border-radius;
-    overflow: hidden;
     background-color: lighten(@base-background-color, 1%);
     box-shadow: 0 2px 8px 1px hsla(0,0%,0%,.3);
     &.from-top {
         top: 10%;
+    }
+    .select-list.command-palette .list-group {
+        overflow-x: hidden;
     }
 }
 
@@ -41,7 +40,7 @@ atom-panel.modal.overlay {
     .package-card {
         background-color: lighten(@base-background-color, 3%);
         border-radius: @component-border-radius * 2;
-        box-shadow: inset .3em .1em 1em .05em rgba(255, 255, 255, 0.04);
+        box-shadow: inset .3em .1em 1em .05em rgba(255, 255, 255, @plastic-effect-strength);
     }
 
     .table td {

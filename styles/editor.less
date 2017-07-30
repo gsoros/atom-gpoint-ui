@@ -1,5 +1,13 @@
-atom-text-editor:not([mini]) .custom-decorations {
-    border-right: 1px solid darken(@base-background-color, 2%);
+atom-text-editor:not([mini]) {
+    .line-number * {
+        color: @text-color-highlight;
+    }
+    .gutter .custom-decorations {
+        border-right: 1px solid darken(@base-background-color, 2%);
+        .decoration .highlight {
+            background-color: @text-color-success;
+        }
+    }
 }
 
 atom-text-editor[mini] {

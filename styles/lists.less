@@ -13,7 +13,7 @@
         line-height: 1.5em !important;
         margin: 1px;
         &.active {
-            color: @text-color-success;
+            color: @text-color-selected;
             background-color: @background-color-success;
             &:hover {
                 background-color: lighten(@background-color-success, 10%);
@@ -22,10 +22,12 @@
         &.selected {
             color: @text-color-selected;
             box-shadow: inset 100em 100em 1em 1em rgba(255, 255, 255, 0.2);
-            &:before{ display: none; }
+            &::before {
+                display: none;
+            }
         }
         &:hover {
-            background-color: lighten(@pane-item-background-color, 5%);
+            box-shadow: inset 100em 100em 1em 1em rgba(255, 255, 255, 0.2);
         }
     }
 }

@@ -3,4 +3,13 @@
     color: @text-color;
     border-top: 1px solid @base-border-color;
     background-color: darken(@base-background-color, 1%);
+    .soft-wrap-indicator {
+        text-decoration: none;
+        &.lit {
+            color: @green;
+        }
+        &:not(.lit) {
+            color: @text-color-subtle;
+        }
+    }
 }

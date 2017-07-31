@@ -7,6 +7,10 @@
 
     font-size: .9em;
 
+    .list-item {
+        color: @text-color;
+    }
+
     .list-item:hover {
         color: @text-color-highlight;
         background-color: @background-color-highlight;
@@ -24,18 +28,21 @@
         }
     }
 
-    .file.entry.status-modified {
-        color: @text-color-warning;
+    .file.entry, .tree-view-panes .list-item {
+        &.status-modified {
+            color: @text-color-warning;
+        }
+        &.status-deleted { // never seen a deleted file, but who knows
+            color: @text-color-error;
+        }
+        &.status-added {
+            color: @text-color-success;
+        }
+        &.status-ignored {
+            opacity: .8;
+        }
     }
-    .file.entry.status-deleted { // never seen a deleted file, but who knows
-        color: @text-color-error;
-    }
-    .file.entry.status-added {
-        color: @text-color-success;
-    }
-    .status-ignored {
-        opacity: .8;
-    }
+    
     .list-item {
         line-height: 1.5em !important;
 

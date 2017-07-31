@@ -2,14 +2,26 @@
     font-size: @font-size;
     color: @text-color;
     border-top: 1px solid @base-border-color;
-    background-color: darken(@base-background-color, 1%);
-    .soft-wrap-indicator {
-        text-decoration: none;
-        &.lit {
-            color: green;
-        }
-        &:not(.lit) {
-            color: @text-color-subtle;
+    background-color: @base-background-color;
+    .soft-wrap-status-component {
+        //border-radius: @component-border-radius *2;
+        .soft-wrap-indicator {
+            border-radius: @component-border-radius;
+            text-decoration: none;
+            padding: 0 .6em 2px .6em;
+            overflow: hidden;
+            background-color: lighten(@base-background-color, 2%);
+            &.lit {
+                text-shadow: none;
+                color: @text-color;
+                background-color: darken(@background-color-success, 5%);
+            }
+            &:not(.lit) {
+                color: @text-color-subtle;
+            }
+            &:hover {
+                color: lighten(@text-color, 15%);
+            }
         }
     }
 }

@@ -26,6 +26,22 @@ atom-panel.modal.overlay {
     }
 }
 
+.php-debug-tab .panel-heading {
+    font-size: .9 * @font-size;
+    padding: .2 * @font-size;
+    border-radius: @component-border-radius;
+    .close-icon {
+        height: .9 * @font-size;
+        line-height: .9 * @font-size;
+        top: 0;
+        padding: 0 .2 * @font-size;
+        &:hover {
+            transform: none;
+            color: @text-color-highlight;
+        }
+    }
+}
+
 .settings-view {
     .config-menu {
         background: inherit;

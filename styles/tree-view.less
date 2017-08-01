@@ -17,12 +17,16 @@
             background-color: fade(@text-color-highlight, 10%);
             left: 0;
             right: 0;
+            border-radius: @component-border-radius;
         }
     }
 
-    .list-item {
+    .list-item, .list-nested-item {
         color: @text-color;
         line-height: @tree-view-line-height !important;
+        &::before {
+            border-radius: @component-border-radius;
+        }
 
         &.project-root-header .name:not(.status-ignored) {
             font-weight: bold;
@@ -59,7 +63,7 @@
             color: @text-color-success;
         }
         &.status-ignored {
-            opacity: .8;
+            opacity: .5;
         }
     }
 

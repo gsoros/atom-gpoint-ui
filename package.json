@@ -1,8 +1,8 @@
 {
   "name": "gpoint-ui",
   "theme": "ui",
-  "version": "0.1.0",
-  "description": "Teh most awesomest theme eva 4 de kodaz",
+  "version": "0.1.1",
+  "description": "Minimal UI theme for keeping focus on the code. Works best with dark syntax themes.",
   "keywords": [
     "ui",
     "theme"

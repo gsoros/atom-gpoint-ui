@@ -1,3 +1,5 @@
+@tree-view-font-size: .9 * @font-size;
+@tree-view-line-height: 1.5 * @tree-view-font-size;
 
 .tree-view-resizer {
     border-right: 1px solid @base-border-color;
@@ -5,16 +7,34 @@
 
 .tree-view {
 
-    font-size: .9em;
+    font-size: @tree-view-font-size;
+
+    .entry, .tree-view-panes .list-item:not(.header) {
+        &:not(.selected):hover::before {
+            content: '';
+            height: @tree-view-line-height !important;
+            position: absolute;
+            background-color: fade(@text-color-highlight, 10%);
+            left: 0;
+            right: 0;
+        }
+    }
 
     .list-item {
         color: @text-color;
+        line-height: @tree-view-line-height !important;
+
+        &.project-root-header .name:not(.status-ignored) {
+            font-weight: bold;
+        }
+        &.selected {
+            color: @text-color-selected;
+        }
+        &:hover {
+            color: @text-color-selected;
+        }
     }
 
-    .list-item:hover {
-        color: @text-color-highlight;
-        background-color: @background-color-highlight;
-    }
     .directory.entry.list-nested-item.expanded {
         .status-modified,
         .status-deleted,
@@ -22,7 +42,7 @@
             &:not(.file) {
                 color: darken(@text-color, 10%);
                 > .header.list-item .name {
-                   color: fade(@text-color-info, 80%);
+                   color: @text-color-modified;
                 }
            }
         }
@@ -30,7 +50,7 @@
 
     .file.entry, .tree-view-panes .list-item {
         &.status-modified {
-            color: @text-color-warning;
+            color: @text-color-modified;
         }
         &.status-deleted { // never seen a deleted file, but who knows
             color: @text-color-error;
@@ -42,36 +62,34 @@
             opacity: .8;
         }
     }
-    
-    .list-item {
-        line-height: 1.5em !important;
 
-        &.project-root-header .name:not(.status-ignored) {
-            font-weight: bold;
-            //font-size: 1.3em;
-        }
-    }
-    .list-item.selected {
-        color: @text-color-selected;
-    }
     .list-nested-item.selected::before,
     .list-item.selected::before {
-        height: 1.5em !important;
+        height: @tree-view-line-height !important;
     }
     .list-item .icon::before {
         height: auto;
-        font-size: .9em;
-        margin-right: 0;
+        font-size: @tree-view-font-size;
+        margin: 0 .2 * @tree-view-font-size;
     }
-    .directory .header.list-item::before {
-        margin-right: 0;
+    .directory .header.list-item {
+        &::before {
+            margin-right: -.5 * @tree-view-font-size;
+        }
+        .name.icon-repo::before {
+            margin-left: .5 * @tree-view-font-size;
+            margin-right: -.2 * @tree-view-font-size;
+        }
     }
     .has-collapsable-children .list-nested-item > .list-tree > li {
-        padding-left: 1em;
+        &.file {
+            margin-left: -.5 * @tree-view-font-size;
+        }
+        padding-left: @tree-view-font-size;
         margin-left: 0;
     }
 
-    // opened files package
+    // opened-files package
     .file-list.opened-files {
         .header .name[data-name="Opened files"],      // List view
         > ol.list-tree > .directory > .header .name {   // Tree view
@@ -79,12 +97,15 @@
         }
         > ol.list-tree .file > span.icon-x  {
             //color: red;
-            left: -1em;
+            left: -@tree-view-font-size;
         }
     }
 
     // tree-view-panes package
     .tree-view-panes {
+        .selected {
+            background-color: @background-color-selected;
+        }
         .header {
             font-weight: bold;
             color: @text-color-highlight;
@@ -92,16 +113,21 @@
                 top: 0;
             }
         }
-        .header::before {
-            top: -5 !important;
-            margin: 0 !important;
+        .header {
+            &::before {
+                top: 0 !important;
+                margin: 0 !important;
+            }
+            .icon::before {
+                margin-left: -.5 * @tree-view-font-size;
+            }
         }
         .list-item .close-button {
-            padding: 0 10px;
+            padding: 0 @tree-view-font-size;
         }
     }
 
-    // open files package
+    // open-files package
     .open-files {
         .open-files-item {
             &.modified {
@@ -130,7 +156,7 @@
     }
     #foldersLabel {
         visibility: hidden;
-        height: .3em !important;
+        height: .3 * @tree-view-font-size !important;
         margin: 0 !important;
     }
 }

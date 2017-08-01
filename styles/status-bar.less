@@ -3,6 +3,8 @@
     color: @text-color;
     border-top: 1px solid @base-border-color;
     background-color: @base-background-color;
+
+    // soft-wrap indicator
     .soft-wrap-status-component {
         //border-radius: @component-border-radius *2;
         .soft-wrap-indicator {
@@ -23,5 +25,11 @@
                 color: lighten(@text-color, 15%);
             }
         }
+    }
+
+    .php-debug-console-view,
+    .php-debug-debug-view {
+        font-size: .9 * @font-size !important;
+        height: 1.5 * @font-size;
     }
 }

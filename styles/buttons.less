@@ -34,11 +34,22 @@ atom-text-editor[mini], {
 
 // Colored buttons -----------------------
 
-.btn.btn-primary { .btn-color(@background-color-info); }
-.btn.btn-info    { .btn-color(@background-color-info); }
-.btn.btn-success { .btn-color(@background-color-success); }
-.btn.btn-warning { .btn-color(@background-color-warning); }
-.btn.btn-error   { .btn-color(@background-color-error); }
+.btn.btn-primary {
+    .btn-color(@background-color-info);
+}
+.btn.btn-info {
+    .btn-color(@background-color-info);
+}
+.btn.btn-success {
+    .btn-color(@background-color-success);
+}
+.btn.btn-warning {
+    .btn-color(@background-color-warning);
+}
+.btn.btn-error,
+.btn.uninstall-button {
+    .btn-color(@background-color-error);
+}
 
 .btn-color(@bg) {
     color: @text-color-selected;

@@ -1,4 +1,4 @@
-@tree-view-font-size: .9 * @font-size;
+@tree-view-font-size: 1 * @font-size;
 @tree-view-line-height: 1.5 * @tree-view-font-size;
 
 .tree-view-resizer {
@@ -52,18 +52,20 @@
         }
     }
 
-    .file.entry, .tree-view-panes .list-item {
-        &.status-modified {
-            color: @text-color-modified;
-        }
-        &.status-deleted { // never seen a deleted file, but who knows
-            color: @text-color-error;
-        }
-        &.status-added {
-            color: @text-color-success;
-        }
-        &.status-ignored {
-            opacity: .5;
+    .file.entry, .directory.entry, .tree-view-panes {
+        .list-item, .list-nested-item {
+            &.status-modified {
+                color: @text-color-modified;
+            }
+            &.status-deleted { // never seen a deleted file, but who knows
+                color: @text-color-error;
+            }
+            &.status-added {
+                color: @text-color-success;
+            }
+            &.status-ignored {
+                opacity: .5;
+            }
         }
     }
 
@@ -74,7 +76,7 @@
     .list-item .icon::before {
         height: auto;
         font-size: @tree-view-font-size;
-        margin: 0 .2 * @tree-view-font-size;
+        margin: 0 .3 * @tree-view-font-size;
     }
     .directory .header.list-item {
         &::before {

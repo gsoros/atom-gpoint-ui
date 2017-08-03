@@ -94,7 +94,9 @@ atom-notification {
     .detail {
         background-color: lighten(@background-color-info, 3%) !important;
     }
-    &.error code {
-        color: @text-color !important;
+    &.error, &.success {
+         code {
+             color: @text-color !important;
+         }
     }
 }

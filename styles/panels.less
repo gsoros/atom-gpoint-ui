@@ -74,11 +74,12 @@ atom-notification {
     }
 }
 
-.atom-dock-toggle-button .right,
-.atom-dock-toggle-button .left, {
-    background-color: @background-color-info;
-    &:hover {
-        background-color: lighten(@background-color-info, 10%);
+.atom-dock-toggle-button {
+    .top, .bottom, .left, .right {
+        background-color: @background-color-info;
+        &:hover {
+            background-color: lighten(@background-color-info, 10%) !important;
+        }
     }
 }
 

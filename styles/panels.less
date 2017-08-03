@@ -68,6 +68,10 @@ atom-notification {
         padding: 0;
         height: 1em;
     }
+    .alert.alert-danger {
+        color: @text-color-error;
+        background-color: @background-color-error;
+    }
 }
 
 .atom-dock-toggle-button .right,
@@ -89,5 +93,8 @@ atom-notification {
     }
     .detail {
         background-color: lighten(@background-color-info, 3%) !important;
+    }
+    &.error code {
+        color: @text-color !important;
     }
 }

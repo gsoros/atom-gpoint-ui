@@ -9,18 +9,6 @@
 
     font-size: @tree-view-font-size;
 
-    .entry, .tree-view-panes .list-item:not(.header) {
-        &:not(.selected):hover::before {
-            content: '';
-            height: @tree-view-line-height;
-            position: absolute;
-            background-color: fade(@text-color-highlight, 10%);
-            left: 0;
-            right: 0;
-            border-radius: @component-border-radius;
-        }
-    }
-
     .list-item, .list-nested-item {
         color: @text-color;
         line-height: @tree-view-line-height !important;

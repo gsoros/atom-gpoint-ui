@@ -6,8 +6,11 @@
 // Overrides: atom/static/lists.less
 
 // List Group -------------------
-.list-group, .select-list {
-    li {
+.list-group,
+.select-list,
+.github-FilePatchListView {
+    li,
+    .github-FilePatchListView-item {
         padding: @component-padding/2, @component-padding/4;
         border-radius: @component-border-radius;
         line-height: 1.5em !important;
@@ -19,7 +22,8 @@
                 background-color: lighten(@background-color-success, 10%);
             }
         }
-        &.selected {
+        &.selected,
+        &is-selected {
             color: @text-color-selected;
             box-shadow: inset 100em 100em 1em 1em rgba(255, 255, 255, 0.2);
             &::before {
@@ -34,9 +38,16 @@
 
 
 // List Tree -------------------
-.list-tree {
+.list-tree:not(.tree-view) {
     .selected {
         color: @text-color-selected;
+    }
+    .list-item,
+    .file.entry {
+        &:hover {
+            background-color: darken(@background-color-selected, 10%);
+            //box-shadow: inset 100em 100em 1em 1em rgba(255, 255, 255, 0.1);
+        }
     }
 }
 

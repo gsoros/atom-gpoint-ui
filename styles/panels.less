@@ -13,7 +13,8 @@ atom-pane {
     }
 }
 
-atom-panel.modal.overlay {
+atom-panel.modal.overlay,
+atom-notification {
     border: 1px solid @overlay-border-color;
     border-radius: @component-border-radius;
     background-color: lighten(@base-background-color, 1%);
@@ -83,6 +84,10 @@ atom-notification {
         color: @text-color !important;
     }
     .content {
-        background-color: @background-color-info;
+        background-color: @background-color-info !important;
+        color: @text-color !important;
+    }
+    .detail {
+        background-color: lighten(@background-color-info, 3%) !important;
     }
 }
